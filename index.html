@@ -19,8 +19,8 @@
     .promise{padding:0 0 76px}.promise-box{border-radius:28px;background:linear-gradient(110deg,var(--yellow),#ffdf72);padding:34px 38px;display:flex;align-items:center;justify-content:space-between;gap:24px}.promise-box h2{font-size:25px;line-height:1.5;margin:0 0 7px}.promise-box p{margin:0;font-size:13px;color:#5b4819}.promise-box .btn{flex-shrink:0}
     footer{background:#111317;color:white;padding:43px 0 20px}.footer-grid{display:grid;grid-template-columns:1.2fr .8fr 1fr;gap:35px}.footer-brand{font-size:18px;font-weight:900}.footer-brand p,.footer-col p{font-size:12px;color:#b7bac1;font-weight:400}.footer-col h3{font-size:14px;margin:0 0 12px}.footer-col a{display:block;font-size:12px;color:#c9cbd0;margin:6px 0}.footer-col a:hover{color:var(--yellow)}.foot-bottom{border-top:1px solid #303239;margin-top:30px;padding-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#a7aab1;font-size:11px}
     .notice{font-size:11px;color:#9b4b12;background:#fff7df;border:1px solid #f8e3a3;border-radius:12px;padding:10px 13px;margin-top:18px}
-    .map-panel{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}#service-map{height:360px;width:100%;background:#eee} .map-caption{padding:15px 18px;font-size:12px;color:var(--muted)}.request-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px;align-items:start}.request-info{background:var(--dark);color:#fff;border-radius:22px;padding:25px}.request-info p{font-size:13px;color:#c5c8ce}.request-form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:800}.field input,.field select,.field textarea{width:100%;min-height:46px;padding:11px 12px;border:1px solid #dcd8cf;border-radius:11px;background:#fffdf8;color:var(--ink);font:inherit;font-size:13px}.field textarea{min-height:100px;resize:vertical}.request-form .btn{font:inherit}.form-note{grid-column:1/-1;color:var(--muted);font-size:11px;margin:0}.request-status{grid-column:1/-1;color:#12633f;font-size:12px;font-weight:700}.leaflet-container{font-family:Tahoma,Arial,sans-serif;z-index:1}
-    @media(max-width:700px){.request-grid{grid-template-columns:1fr}#service-map{height:300px}.request-form{grid-template-columns:1fr;padding:18px}.field.full,.form-note,.request-status{grid-column:auto}}
+    .map-panel{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}#service-map{height:360px;width:100%;background:#eee} .map-caption{padding:15px 18px;font-size:12px;color:var(--muted)}.leaflet-container{font-family:Tahoma,Arial,sans-serif;z-index:1}
+    @media(max-width:700px){#service-map{height:300px}}
     @media(max-width:850px){.editorial-photo,.editorial-photo.reverse{grid-template-columns:1fr;gap:16px}.editorial-photo img{height:220px}.editorial-photo.reverse img{order:0}.service-featured{grid-template-columns:minmax(130px,.8fr) 1.2fr;gap:16px}.service-feature-photo,.service-feature-photo img{min-height:190px}.navlinks{display:none}.hero{padding:48px 0}.hero-grid,.about-grid{grid-template-columns:1fr;gap:28px}.hero-copy{order:1}.visual{order:0;min-height:290px}.visual-card{max-width:330px}.float-note{left:4%;bottom:18px}.services{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}.about-art{min-height:240px}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
     @media(max-width:520px){.service-featured{grid-template-columns:105px minmax(0,1fr);gap:12px;padding:14px}.service-feature-photo,.service-feature-photo img{min-height:175px}.service-feature-content .service-icon{width:38px;height:38px;font-size:20px;border-radius:12px;margin-bottom:8px}.service-feature-content h3{font-size:15px}.service-feature-content p{font-size:12px}.nav{min-height:67px}.brand{font-size:13px}.brand-mark{width:39px;height:39px}.nav-cta{padding:10px 11px;font-size:11px}.hero{padding:35px 0 45px}h1{font-size:33px;letter-spacing:-.8px}.hero p{font-size:14px}.visual{min-height:270px}.visual-card{max-width:290px;border-radius:27px;padding:22px}.tool-icon{font-size:88px}.visual-title{font-size:22px}.section{padding:56px 0}.services{grid-template-columns:1fr}.service{padding:20px}.principles{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.step{padding:15px}.promise{padding-bottom:55px}.promise-box{padding:25px 21px;align-items:flex-start;flex-direction:column}.promise-box h2{font-size:22px}.footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.foot-bottom{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
@@ -53,11 +53,6 @@ h1 span:after{background:#d4a72c;opacity:.4}
 footer{background:#070708}.foot-bottom{border-color:#2c2c2c}.footer-col a:hover{color:#f2c230}
 .notice{color:#f0d47a;background:#201b0b;border-color:#5b491a}
 .map-panel{background:#171719;border-color:#343434}.map-caption{color:#bdbdbd}
-.request-info{background:#171719;border:1px solid #343434}.request-info p{color:#c7c7c7}
-.request-form{background:#171719;border-color:#343434}.field label{color:#f1f1f1}
-.field input,.field select,.field textarea{background:#0e0e10;border-color:#414141;color:#f5f5f5}
-.field input::placeholder,.field textarea::placeholder{color:#888}
-.form-note{color:#bdbdbd}.request-status{color:#9be7bd}
 @media(max-width:520px){.visual-card{background-position:center}}
 
   </style>
@@ -184,37 +179,7 @@ footer{background:#070708}.foot-bottom{border-color:#2c2c2c}.footer-col a:hover{
         </div>
         <div class="map-panel">
           <div id="service-map" role="application" aria-label="نقشه محدوده خدمات‌رسانی آچار فرانسه"></div>
-          <div class="map-caption">دایره روی نقشه محدوده تقریبی ۲۰ کیلومتری را نشان می‌دهد، نه مرز قطعی پذیرش سفارش. برای اطمینان، نشانی خود را در فرم درخواست بنویسید.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="service-request">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="kicker">ثبت درخواست</span>
-          <h2>زمان پیشنهادی‌تان را ثبت کنید</h2>
-          <p>فرم را تکمیل کنید تا متن درخواست در واتساپ برای آچار فرانسه آماده شود. زمان فقط پس از بررسی و تأیید شما قطعی خواهد شد.</p>
-        </div>
-        <div class="request-grid">
-          <aside class="request-info">
-            <h3>درخواست شما ابتدا بررسی می‌شود</h3>
-            <p>روز و ساعت انتخابی شما پیشنهادی است. پس از ارسال پیام، برای تأیید زمان، امکان انجام خدمت و هماهنگی هزینه با شما تماس گرفته می‌شود.</p>
-            <p><strong>تماس مستقیم:</strong><br><a href="tel:09300526266" dir="ltr">09300526266</a></p>
-            <p><strong>وضعیت اولیه:</strong> در انتظار بررسی و تأیید</p>
-          </aside>
-          <form class="request-form" id="request-form">
-            <div class="field"><label for="req-name">نام و نام خانوادگی *</label><input id="req-name" name="name" autocomplete="name" required maxlength="100" placeholder="نام شما"></div>
-            <div class="field"><label for="req-phone">شماره تماس *</label><input id="req-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="20" placeholder="شماره‌ای که پاسخ‌گو هستید"></div>
-            <div class="field"><label for="req-service">نوع خدمت *</label><select id="req-service" name="service" required><option value="">انتخاب خدمت</option><option>برق ساختمان و روشنایی</option><option>نصب، راه‌اندازی و تعمیر کولر آبی</option><option>نصب تلویزیون</option><option>نصب و تنظیم انواع آنتن</option><option>سایر خدمات فنی سبک</option></select></div>
-            <div class="field"><label for="req-address">نشانی محل خدمت *</label><input id="req-address" name="address" required maxlength="300" placeholder="شهر، محله، خیابان و پلاک"></div>
-            <div class="field"><label for="req-date">روز پیشنهادی *</label><input id="req-date" name="date" type="date" required></div>
-            <div class="field"><label for="req-time">ساعت پیشنهادی *</label><select id="req-time" name="time" required><option value="">انتخاب ساعت</option><option>۰۸:۰۰ تا ۱۰:۰۰</option><option>۱۰:۰۰ تا ۱۲:۰۰</option><option>۱۲:۰۰ تا ۱۴:۰۰</option><option>۱۴:۰۰ تا ۱۶:۰۰</option><option>۱۶:۰۰ تا ۱۸:۰۰</option><option>۱۸:۰۰ تا ۲۰:۰۰</option></select></div>
-            <div class="field full"><label for="req-details">توضیحات درخواست</label><textarea id="req-details" name="details" maxlength="1000" placeholder="شرح کوتاه مشکل یا وسیله موردنظر (اختیاری)"></textarea></div>
-            <button class="btn btn-primary field full" type="submit">ارسال درخواست برای بررسی در واتساپ ←</button>
-            <p class="form-note">با زدن این دکمه، واتساپ باز می‌شود و متن آماده‌شده را می‌توانید برای ما ارسال کنید. این فرم به‌تنهایی درخواست را خودکار ذخیره نمی‌کند و رزرو را قطعی نمی‌کند.</p>
-            <p class="request-status" id="request-status" aria-live="polite"></p>
-          </form>
+          <div class="map-caption">دایره روی نقشه محدوده تقریبی ۲۰ کیلومتری را نشان می‌دهد، نه مرز قطعی پذیرش سفارش. برای بررسی امکان مراجعه، از راه‌های ارتباطی پایین صفحه استفاده کنید.</div>
         </div>
       </div>
     </section>
@@ -233,12 +198,6 @@ footer{background:#070708}.foot-bottom{border-color:#2c2c2c}.footer-col a:hover{
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
     (function(){
-      var dateField = document.getElementById('req-date');
-      if (dateField) {
-        var now = new Date();
-        var localDate = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0,10);
-        dateField.min = localDate;
-      }
       var mapNode = document.getElementById('service-map');
       if (mapNode && window.L) {
         var center = [35.7103, 51.1131];
@@ -253,25 +212,7 @@ footer{background:#070708}.foot-bottom{border-color:#2c2c2c}.footer-col a:hover{
       } else if (mapNode) {
         mapNode.innerHTML = '<div style="padding:20px;text-align:center">برای نمایش نقشه، اتصال اینترنت و دسترسی به سرویس نقشه لازم است. <a href="https://www.openstreetmap.org/?mlat=35.7103&mlon=51.1131#map=11/35.7103/51.1131" target="_blank" rel="noopener noreferrer">مشاهده نقشه در OpenStreetMap</a></div>';
       }
-      var form = document.getElementById('request-form');
-      if (form) form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        if (!form.reportValidity()) return;
-        var data = new FormData(form);
-        var lines = [
-          'درخواست خدمات جدید - گروه فنی تخصصی آچار فرانسه',
-          'وضعیت: در انتظار بررسی و تأیید مدیر',
-          'نام: ' + data.get('name'),
-          'شماره تماس: ' + data.get('phone'),
-          'خدمت: ' + data.get('service'),
-          'نشانی: ' + data.get('address'),
-          'روز پیشنهادی: ' + data.get('date'),
-          'ساعت پیشنهادی: ' + data.get('time'),
-          'توضیحات: ' + (data.get('details') || 'ذکر نشده')
-        ];
-        document.getElementById('request-status').textContent = 'واتساپ باز می‌شود؛ برای ارسال درخواست، پیام را در واتساپ ارسال کنید. تا پیش از تأیید، زمان قطعی نیست.';
-        window.open('https://wa.me/989300526266?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener,noreferrer');
-      });
+
     })();
   </script>
 
