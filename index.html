@@ -24,6 +24,22 @@
     @media(max-width:850px){.editorial-photo,.editorial-photo.reverse{grid-template-columns:1fr;gap:16px}.editorial-photo img{height:220px}.editorial-photo.reverse img{order:0}.service-featured{grid-template-columns:minmax(130px,.8fr) 1.2fr;gap:16px}.service-feature-photo,.service-feature-photo img{min-height:190px}.navlinks{display:none}.hero{padding:48px 0}.hero-grid,.about-grid{grid-template-columns:1fr;gap:28px}.hero-copy{order:1}.visual{order:0;min-height:290px}.visual-card{max-width:330px}.float-note{left:4%;bottom:18px}.services{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}.about-art{min-height:240px}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
     @media(max-width:520px){.service-featured{grid-template-columns:105px minmax(0,1fr);gap:12px;padding:14px}.service-feature-photo,.service-feature-photo img{min-height:175px}.service-feature-content .service-icon{width:38px;height:38px;font-size:20px;border-radius:12px;margin-bottom:8px}.service-feature-content h3{font-size:15px}.service-feature-content p{font-size:12px}.nav{min-height:67px}.brand{font-size:13px}.brand-mark{width:39px;height:39px}.nav-cta{padding:10px 11px;font-size:11px}.hero{padding:35px 0 45px}h1{font-size:33px;letter-spacing:-.8px}.hero p{font-size:14px}.visual{min-height:270px}.visual-card{max-width:290px;border-radius:27px;padding:22px}.tool-icon{font-size:88px}.visual-title{font-size:22px}.section{padding:56px 0}.services{grid-template-columns:1fr}.service{padding:20px}.principles{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.step{padding:15px}.promise{padding-bottom:55px}.promise-box{padding:25px 21px;align-items:flex-start;flex-direction:column}.promise-box h2{font-size:22px}.footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.foot-bottom{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+    .hero-slider{isolation:isolate;background:#111!important;padding:28px}
+    .hero-slider:before,.hero-slider:after{display:none}
+    .hero-slides,.hero-shade{position:absolute;inset:0;z-index:-1}
+    .hero-slides{overflow:hidden;border-radius:inherit}
+    .hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.035);transition:opacity 1s ease,transform 5s ease}
+    .hero-slide.is-active{opacity:1;transform:scale(1)}
+    .hero-shade{z-index:0;background:linear-gradient(90deg,rgba(0,0,0,.68),rgba(0,0,0,.28)),linear-gradient(0deg,rgba(0,0,0,.65),transparent 65%);border-radius:inherit;pointer-events:none}
+    .hero-slider .visual-label,.hero-slider .visual-title,.hero-slider .visual-foot{z-index:1;text-shadow:0 2px 8px rgba(0,0,0,.8)}
+    .hero-slider .tool-icon{display:none}
+    .hero-slider .visual-title{margin-top:24px}
+    .hero-slider .visual-foot{bottom:54px}
+    .hero-dots{position:absolute;z-index:3;bottom:20px;left:25px;display:flex;gap:8px}
+    .hero-dot{width:8px;height:8px;padding:0;border:1px solid #fff;background:rgba(255,255,255,.45);border-radius:50%;cursor:pointer}
+    .hero-dot[aria-current="true"]{width:23px;border-radius:10px;background:#f2c230;border-color:#f2c230}
+    @media(prefers-reduced-motion:reduce){.hero-slide{transition:none;transform:none}}
+
   
 /* Black & gold redesign preview — preserves the existing content and form behavior */
 :root{--yellow:#f2c230;--orange:#d4a72c;--ink:#f5f5f5;--muted:#c1c1c1;--paper:#0b0b0d;--line:#343434;--white:#fff;--dark:#111113;--green:#7bd7a8;--radius:20px;--shadow:0 16px 45px rgba(0,0,0,.35)}
@@ -91,7 +107,13 @@ footer{background:#070708}.foot-bottom{border-color:#2c2c2c}.footer-col a:hover{
           </div>
         </div>
         <div class="visual" aria-label="تصویرسازی گرافیکی ابزار و خدمات فنی">
-          <div class="visual-card">
+          <div class="visual-card hero-slider">
+            <div class="hero-slides" aria-label="تصاویر خدمات آچار فرانسه">
+              <img class="hero-slide is-active" src="https://raw.githubusercontent.com/mehrshad-noroozi/achar-france/main/technicians.jpg?v=20261030-3" alt="دو تکنسین در لباس کار" fetchpriority="high">
+              <img class="hero-slide" src="https://raw.githubusercontent.com/mehrshad-noroozi/achar-france/main/file_00000000fcc4720a816577e6c712e464.png" alt="ابزار و جزئیات خدمات فنی" loading="lazy">
+              <img class="hero-slide" src="https://raw.githubusercontent.com/mehrshad-noroozi/achar-france/main/file_00000000e6d871f4a0ba32fc530c87a8.png" alt="فعالیت‌های آچار فرانسه" loading="lazy">
+            </div>
+            <div class="hero-shade"></div>
             <div class="visual-label">ACHAR FRANCE · TECHNICAL SERVICES</div>
             <div class="visual-title">راه‌حل فنی<br>با دقت و مسئولیت</div>
             <div class="tool-icon" aria-hidden="true">⚡</div>
@@ -198,6 +220,39 @@ footer{background:#070708}.foot-bottom{border-color:#2c2c2c}.footer-col a:hover{
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
     (function(){
+      var slides = Array.prototype.slice.call(document.querySelectorAll('.hero-slide'));
+      var slider = document.querySelector('.hero-slider');
+      if (slider && slides.length > 1) {
+        var dots = document.createElement('div');
+        dots.className = 'hero-dots';
+        slides.forEach(function(slide, index) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'hero-dot';
+          dot.setAttribute('aria-label', 'نمایش تصویر ' + (index + 1));
+          dot.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+          dot.addEventListener('click', function(){ showSlide(index); restartTimer(); });
+          dots.appendChild(dot);
+        });
+        slider.appendChild(dots);
+        var current = 0, timer;
+        function showSlide(index) {
+          slides[current].classList.remove('is-active');
+          dots.children[current].setAttribute('aria-current', 'false');
+          current = index;
+          slides[current].classList.add('is-active');
+          dots.children[current].setAttribute('aria-current', 'true');
+        }
+        function restartTimer() {
+          if (timer) window.clearInterval(timer);
+          if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            timer = window.setInterval(function(){ showSlide((current + 1) % slides.length); }, 4500);
+          }
+        }
+        restartTimer();
+        slider.addEventListener('mouseenter', function(){ if(timer) window.clearInterval(timer); });
+        slider.addEventListener('mouseleave', restartTimer);
+      }
       var mapNode = document.getElementById('service-map');
       if (mapNode && window.L) {
         var center = [35.7103, 51.1131];
